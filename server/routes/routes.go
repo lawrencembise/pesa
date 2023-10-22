@@ -6,7 +6,13 @@ import (
 )
 
 func Routes(app *fiber.App) {
-	api := app.Group("/api/v1")
+	api := app.Group("/api/v0")
 	api.Group("/test/t1", controllers.Test)
+
+	vodacom := api.Group("/vodacom")
+	{
+		vodacom.Post("/transaction", controllers.MpesaTransaction)
+		vodacom.Post("/transaction", controllers.MpesaCallback)
+	}
 
 }

@@ -1,4 +1,4 @@
-package vodacom
+package model
 
 import "encoding/xml"
 

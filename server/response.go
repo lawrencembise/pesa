@@ -7,12 +7,20 @@ type SuccessResponseStrct struct {
 	Code int         `json:"code"`
 }
 type ErrorResponse struct {
-	Message string `json:"error"`
+	Code  int    `json:"code"`
+	Error string `json:"error"`
 }
 
 func SuccessResponse(c *fiber.Ctx, statusCode int, data interface{}) error {
 	return c.JSON(SuccessResponseStrct{
 		Code: statusCode,
 		Data: data,
+	})
+}
+
+func UnSuccessResponse(c *fiber.Ctx, statusCode int, err string) error {
+	return c.JSON(ErrorResponse{
+		Code:  statusCode,
+		Error: err,
 	})
 }
