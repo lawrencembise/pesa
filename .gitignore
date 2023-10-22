@@ -22,3 +22,6 @@ go.work
 
 # YAML files
 *.yml
+
+# IDE
+.idea
