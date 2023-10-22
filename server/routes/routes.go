@@ -12,7 +12,7 @@ func Routes(app *fiber.App) {
 	vodacom := api.Group("/vodacom")
 	{
 		vodacom.Post("/transaction", controllers.MpesaTransaction)
-		vodacom.Post("/transaction", controllers.MpesaCallback)
+		vodacom.Post("/callback", controllers.MpesaCallback)
 	}
 
 }
