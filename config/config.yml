@@ -1,0 +1,7 @@
+host: localhost
+port: 9999
+dBHost: localhost
+dBName: pesa
+dBUserName: root
+dBPassword: root
+dBPort: 5432
